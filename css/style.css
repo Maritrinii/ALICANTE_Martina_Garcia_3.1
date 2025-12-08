@@ -11,6 +11,14 @@
     box-sizing: border-box;
 }
 
+/* TEMAS DE COLOR */
+.theme-blue {
+    background-color: var(--blue);
+}
+
+.theme-orange {
+    background-color: var(--orange);
+}
 
 :root {
     --h1: 900 8rem "Fraunces", serif;
@@ -30,7 +38,7 @@ html {
 nav {
     width: 100%;
     height: 70px;
-    background-color: white;
+    background-color: inherit;
     color: var(--black);
     display: flex;
     align-items: center;
@@ -293,10 +301,10 @@ h1 {
     .footer-right {
         width: 100%;
         flex: unset;
-        text-align: center;
+        /* text-align: center;
         margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: center; */
     }
 
     .footer-left .politics {
@@ -321,4 +329,5 @@ h1 {
         text-align: center;
         margin-top: 1.5rem;
     }
+
 }
