@@ -90,13 +90,23 @@ nav {
 header {
     text-align: center;
     position: relative;
-    padding: 7rem 11rem;
+    padding: 4rem 0 0 0;
     scroll-margin-top: 70px;
+}
+
+#home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
 }
 
 .header-title {
     display: block;
-    position: relative;   
+    position: relative; 
+    text-align: center;
+    max-width: 100%;  
 }
 
 h1 {
@@ -114,15 +124,77 @@ h1 {
 
 }
 
-/* .img-header > img {
+.img-header {
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-header img {
     width: 100%;
     height: auto;
-    max-width: 1300px;
-    margin: 0 auto;
     display: block;
-    padding-bottom: 5rem;
-    align-items: center;
-} */
+}
+
+/* FOOTER */
+#footer {
+    border: 1px solid var(--black);
+    padding: 2rem 6rem; 
+    display: flex;
+    flex-direction: column;
+    font-family: var(--inter);
+    font-size: 0.8rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+}
+
+.footer-left {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.footer-left .politics {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+  
+.footer-right {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--black);
+
+}
+
+.footer-right .social {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+
+.footer-right .social i {
+    color: var(--black);
+}
+
+.footer-top .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 678px) {
@@ -191,5 +263,62 @@ h1 {
         text-align: center;
         font-size: 2rem !important;
         padding: 1rem 0 !important;
+    }
+
+    /* HEADER */
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    /* FOOTER */
+    #footer {
+        width: 100%;
+        padding: 2rem 1.5rem;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+        flex: unset;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-left .politics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .footer-right .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        width: auto !important;
+        margin: 0;
+        margin-top: 1.5rem;
+    }
+
+    .footer-top .copyright {
+        width: 100%;
+        text-align: center;
+        margin-top: 1.5rem;
     }
 }
