@@ -23,6 +23,7 @@
 :root {
     --h1: 900 8rem "Fraunces", serif;
     --h2: 400 2.2rem "highest-praise", sans-serif;
+    --text: 1.2rem "Inter", sans serif;
     --black:#0a0908;
     --orange: #ff8811;
     --blue: #0080c9;
@@ -219,6 +220,24 @@ h1 {
     padding: 4rem 0 0 0;
     scroll-margin-top: 70px;
 }
+
+.text-info p {
+    /* margin-top: 10rem; */
+    padding: 10rem 10rem 6rem 10rem;
+    font: var(--text);
+
+}
+
+.btn a {
+    text-decoration: none;
+    font-family: var(--fraunces);
+    font-size: 1.2rem;
+    background-color: var(--blue);
+    color: var(--black);
+    border: 1px solid var(--black);
+    padding: 1.5rem 2rem;
+}
+
 
 /* LUGARES */
 #lugares {
