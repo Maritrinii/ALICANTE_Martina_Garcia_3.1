@@ -1,7 +1,7 @@
 /* LINK TIPOGRAFÍAS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=Inter:wght@400;700&display=swap');
 
 @import url("https://use.typekit.net/hpv8rxq.css");
 
@@ -13,8 +13,8 @@
 
 
 :root {
-    --h1-type:fraunces;
-    --h2-type:inter;
+    --h1: 900 8rem "Fraunces", serif;
+    --h2: 400 2.2rem "highest-praise", sans-serif;
     --black:#0a0908;
     --orange: #ff8811;
     --blue: #0080c9;
@@ -86,7 +86,43 @@ nav {
     cursor: pointer;
 }
 
+/* HEADER */
+header {
+    text-align: center;
+    position: relative;
+    padding: 7rem 11rem;
+    scroll-margin-top: 70px;
+}
 
+.header-title {
+    display: block;
+    position: relative;   
+}
+
+h1 {
+    font: var(--h1);
+    margin: 0;
+}
+
+.header-title > h2 {
+    font: var(--h2);
+    position: absolute;
+    margin-top: 2rem;
+    display: inline-block;
+    transform-origin: 0 0;
+    transform: rotate(-6deg);
+
+}
+
+/* .img-header > img {
+    width: 100%;
+    height: auto;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 5rem;
+    align-items: center;
+} */
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 678px) {
