@@ -29,6 +29,7 @@
     --blue: #0080c9;
     --inter:inter, sans serif; 
     --fraunces: fraunces, serif;
+    --padding-text: 10rem 10rem 6rem 10rem;
 }
 
 html {
@@ -99,7 +100,7 @@ nav {
 header {
     text-align: center;
     position: relative;
-    padding: 4rem 0 0 0;
+    padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
 
@@ -209,23 +210,106 @@ h1 {
 #location {
     text-align: center;
     position: relative;
-    padding: 4rem 0 0 0;
+    padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
+
+.cont-info {
+    display: flex;
+    gap: 2rem;
+    padding: var(--padding-text);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.img-left {
+    flex: 1;
+}
+
+.img-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.text-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.text-right .description {
+    font-family: var(--inter);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.text-right .list-alc {
+    display: flex;
+    justify-content: space-evenly; /* Espacio igual a los lados y entre columnas */
+    align-items: flex-start;       /* Alinea columnas al inicio (arriba) */
+    width: 100%;                   /* Ocupa todo el ancho del contenedor padre */
+    max-width: 500px;              /* Ajusta según tu diseño */
+    margin: 0 auto;                /* Centra el bloque de columnas */
+    gap: 1rem;                     /* Opcional, para separación extra si quieres */
+}
+
+.text-right .list-alc {
+    display: flex;
+    justify-content: space-between; /* Separación mínima entre columnas */
+    align-items: flex-start;
+    width: 100%;
+    max-width: 500px;  /* Ajusta al ancho que quieras */
+    margin: 0 auto;    /* Centra el bloque */
+    gap: 1rem;         /* Espacio entre columnas */
+}
+
+
+.text-right .list-alc ol li {
+    margin-bottom: 0.5rem;
+    font-family: var(--fraunces);
+    font-size: 0.95rem;
+}
+
+.text-right .list-alc ol {
+    flex: 0 1 48%;     /* Cada columna ocupa cerca de la mitad */
+    list-style-position: inside;
+    padding-left: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.list-alc ol {
+    list-style-position: inside; /* Hace que los números estén dentro del área de texto */
+    padding-left: 0;             /* Quita el padding por defecto de la lista */
+    margin-left: 0;              /* Alinea la lista con el contenido */
+    text-align: left;            /* Justifica el texto a la izquierda */
+}
+
+.list-alc ol li {
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
 
 /* CLIMA */
 #clima {
     text-align: center;
     position: relative;
-    padding: 4rem 0 0 0;
+    padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
 
 .text-info p {
-    /* margin-top: 10rem; */
-    padding: 10rem 10rem 6rem 10rem;
+    padding: var(--padding-text);
     font: var(--text);
-
 }
 
 .btn a {
@@ -243,7 +327,7 @@ h1 {
 #lugares {
     text-align: center;
     position: relative;
-    padding: 4rem 0 0 0;
+    padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
 
@@ -251,7 +335,7 @@ h1 {
 #curiosity {
     text-align: center;
     position: relative;
-    padding: 4rem 0 0 0;
+    padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
 
@@ -278,7 +362,7 @@ h1 {
         align-items: center;
         justify-content: flex-start;
         padding-top: 70px;
-        background-color: white;
+        background-color: inherit;
         height: 100vh;
         position: fixed;
         top: 0;
