@@ -23,6 +23,7 @@
 :root {
     --h1: 900 8rem "Fraunces", serif;
     --h2: 400 2.2rem "highest-praise", sans-serif;
+    --h3: 1.5rem "Inter", sans serif;
     --text: 1.2rem "Inter", sans serif;
     --black:#0a0908;
     --orange: #ff8811;
@@ -330,6 +331,59 @@ h1 {
     padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
+
+
+.img-cont img {
+    max-height: 300px;
+}
+
+.galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin: 4rem 0;
+    padding: 0 10rem;
+    font: var(--h3);
+    gap: 1.5rem;
+}
+
+.galeria:nth-child(even) {
+    align-items: flex-end;
+}
+
+.galeria a {
+    display: inline-block;
+    max-width: 700px;
+    width: 100%;
+}
+
+.galeria a img {
+    display: block;
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.galeria:nth-child(2) img,
+.galeria:nth-child(4) img {
+    margin-left: auto; /* empuja la imagen hacia la derecha */
+}
+
+
+/* .galeria img {
+    max-height: 50%;    
+    max-width: 50%;
+    height: auto;
+} */
+
+
+
+
+
+
+
+
+
+
 
 /* CURIOSIDADES */
 #curiosity {
