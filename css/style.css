@@ -1,3 +1,178 @@
 * {
-    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* LINK TIPOGRAFÍAS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+@import url("https://use.typekit.net/hpv8rxq.css");
+
+
+:root {
+    --h1-type:fraunces;
+    --h2-type:;
+    --black:#0a0908;
+    --orange: #ff8811;
+    --blue: #347fc4;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+    width: 100%;
+    height: 70px;
+    background-color:;
+    color: var(--black);
+    border: 1px var(--black)solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-sizing: border-box;
+}
+ 
+.menu-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 2rem;
+}
+  
+.logo-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-menu a {
+    text-decoration: none;
+    font-family: "Fraunces", serif;
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: 900;
+}
+
+/* MENÚ */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    /* margin: 0;
+    padding: 0; */
+}
+  
+.menu a {
+    color:var(--black);
+    text-decoration: none;
+    font-family:"Inter", sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+  
+.menu a:hover {
+    color:;
+}
+  
+/* --- BURGER --- */
+  .burger {
+    font-size: 2rem;
+    color:;
+    display: none;
+    cursor: pointer;
+}
+
+nav .menu a[href="#entradas"].btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color:;
+    font-size: 1.2rem;
+}
+  
+nav .menu a[href="#entradas"].btn:hover {
+    color:;
+    background: none;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 678px) {
+    /* MENÚ */
+    .menu-left,
+    .menu-right {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .menu-container {
+        justify-content: space-between;
+    }
+
+    nav.menu-open .menu-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 70px;
+        background-color: rgba(0, 0, 0, 0.95);
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    nav.menu-open .menu-left,
+    nav.menu-open .menu-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .logo-menu {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+    }
+
+    .burger {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    nav.menu-open .logo-menu {
+        display: block;
+    }
+
+    nav.menu-open .menu a {
+        font-size: 2rem;
+    }
+
+    nav .menu a[href="#entradas"].btn {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem !important;
+        padding: 1rem 0 !important;
+      }
+
 }
