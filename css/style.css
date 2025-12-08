@@ -86,7 +86,7 @@ nav {
 }
 
   
-/* --- BURGER --- */
+/* BURGER */
   .burger {
     font-size: 2rem;
     color: var(--black);
@@ -203,6 +203,39 @@ h1 {
     margin-top: 1.5rem;
     font-size: 0.9rem;
 }
+
+/* LOCALIZACIÓN */
+#location {
+    text-align: center;
+    position: relative;
+    padding: 4rem 0 0 0;
+    scroll-margin-top: 70px;
+}
+
+/* CLIMA */
+#clima {
+    text-align: center;
+    position: relative;
+    padding: 4rem 0 0 0;
+    scroll-margin-top: 70px;
+}
+
+/* LUGARES */
+#lugares {
+    text-align: center;
+    position: relative;
+    padding: 4rem 0 0 0;
+    scroll-margin-top: 70px;
+}
+
+/* CURIOSIDADES */
+#curiosity {
+    text-align: center;
+    position: relative;
+    padding: 4rem 0 0 0;
+    scroll-margin-top: 70px;
+}
+
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 678px) {
