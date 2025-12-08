@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* LINK TIPOGRAFÍAS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
@@ -11,13 +5,21 @@
 
 @import url("https://use.typekit.net/hpv8rxq.css");
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 :root {
     --h1-type:fraunces;
-    --h2-type:;
+    --h2-type:inter;
     --black:#0a0908;
     --orange: #ff8811;
-    --blue: #347fc4;
+    --blue: #0080c9;
+    --inter:inter, sans serif; 
+    --fraunces: fraunces, serif;
 }
 
 html {
@@ -28,9 +30,8 @@ html {
 nav {
     width: 100%;
     height: 70px;
-    background-color:;
+    background-color: white;
     color: var(--black);
-    border: 1px var(--black)solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +40,7 @@ nav {
     left: 0;
     z-index: 999;
     box-sizing: border-box;
+    border: 1px solid var(--black);
 }
  
 .menu-container {
@@ -46,71 +48,49 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
     padding: 0 2rem;
 }
   
-.logo-menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 45px;
-    display: flex;
-    align-items: center;
-}
-
 .logo-menu a {
-    text-decoration: none;
-    font-family: "Fraunces", serif;
+    font-family: var(--fraunces);  
+    text-decoration: none; 
+    font-weight: bold;
     font-size: 2rem;
-    color: var(--black);
-    font-weight: 900;
-}
+    color: var(--black); 
 
+}
+  
 /* MENÚ */
 .menu {
     list-style: none;
     display: flex;
-    gap: 3rem;
-    /* margin: 0;
-    padding: 0; */
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
   
 .menu a {
-    color:var(--black);
+    color: var(--black);
     text-decoration: none;
-    font-family:"Inter", sans-serif;
-    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
-  
-.menu a:hover {
-    color:;
-}
+
   
 /* --- BURGER --- */
   .burger {
     font-size: 2rem;
-    color:;
+    color: var(--black);
     display: none;
     cursor: pointer;
 }
 
-nav .menu a[href="#entradas"].btn {
-    background: none;
-    border: none;
-    padding: 0;
-    color:;
-    font-size: 1.2rem;
-}
-  
-nav .menu a[href="#entradas"].btn:hover {
-    color:;
-    background: none;
-}
+
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 678px) {
+
     /* MENÚ */
     .menu-left,
     .menu-right {
@@ -123,18 +103,20 @@ nav .menu a[href="#entradas"].btn:hover {
 
     .menu-container {
         justify-content: space-between;
-    }
+    } 
 
     nav.menu-open .menu-container {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         padding-top: 70px;
-        background-color: rgba(0, 0, 0, 0.95);
+        background-color: white;
         height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
+        border: 1px solid var(--black);
+
     }
 
     nav.menu-open .menu-left,
@@ -173,6 +155,5 @@ nav .menu a[href="#entradas"].btn:hover {
         text-align: center;
         font-size: 2rem !important;
         padding: 1rem 0 !important;
-      }
-
+    }
 }

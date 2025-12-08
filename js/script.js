@@ -9,7 +9,3 @@ if (burger) {
     nav.classList.toggle("menu-open");
     });
 }
-
-$(".burger").on("click", function(){
-    $("nav").toggleClass("menu-open");
-});
