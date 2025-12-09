@@ -22,15 +22,16 @@
 
 :root {
     --h1: 900 8rem "Fraunces", serif;
-    --h2: 400 2.2rem "highest-praise", sans-serif;
+    --h2: 400 3rem "highest-praise", sans-serif;
     --h3: 1.5rem "Inter", sans serif;
-    --text: 1.2rem "Inter", sans serif;
+    --text: 1.3rem "Inter", sans serif;
     --black:#0a0908;
     --orange: #ff8811;
     --blue: #0080c9;
     --inter:inter, sans serif; 
     --fraunces: fraunces, serif;
     --padding-text: 10rem 10rem 6rem 10rem;
+    --border: 1px solid var(--black);
 }
 
 html {
@@ -146,9 +147,13 @@ h1 {
     display: block;
 }
 
+.h2-clima {
+    margin-left: 115px;
+}
+
 /* FOOTER */
 #footer {
-    border: 1px solid var(--black);
+    border: var(--border);
     padding: 2rem 6rem; 
     display: flex;
     flex-direction: column;
@@ -231,7 +236,6 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
 }
 
 .text-right {
@@ -249,22 +253,22 @@ h1 {
 
 .text-right .list-alc {
     display: flex;
-    justify-content: space-evenly; /* Espacio igual a los lados y entre columnas */
-    align-items: flex-start;       /* Alinea columnas al inicio (arriba) */
-    width: 100%;                   /* Ocupa todo el ancho del contenedor padre */
-    max-width: 500px;              /* Ajusta según tu diseño */
-    margin: 0 auto;                /* Centra el bloque de columnas */
-    gap: 1rem;                     /* Opcional, para separación extra si quieres */
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
 }
 
 .text-right .list-alc {
     display: flex;
-    justify-content: space-between; /* Separación mínima entre columnas */
+    justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 500px;  /* Ajusta al ancho que quieras */
-    margin: 0 auto;    /* Centra el bloque */
-    gap: 1rem;         /* Espacio entre columnas */
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
 }
 
 
@@ -275,7 +279,7 @@ h1 {
 }
 
 .text-right .list-alc ol {
-    flex: 0 1 48%;     /* Cada columna ocupa cerca de la mitad */
+    flex: 0 1 48%;
     list-style-position: inside;
     padding-left: 0;
     margin: 0;
@@ -283,10 +287,10 @@ h1 {
 }
 
 .list-alc ol {
-    list-style-position: inside; /* Hace que los números estén dentro del área de texto */
-    padding-left: 0;             /* Quita el padding por defecto de la lista */
-    margin-left: 0;              /* Alinea la lista con el contenido */
-    text-align: left;            /* Justifica el texto a la izquierda */
+    list-style-position: inside;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
 }
 
 .list-alc ol li {
@@ -319,7 +323,7 @@ h1 {
     font-size: 1.2rem;
     background-color: var(--blue);
     color: var(--black);
-    border: 1px solid var(--black);
+    border: var(--border);
     padding: 1.5rem 2rem;
 }
 
@@ -361,11 +365,12 @@ h1 {
     display: block;
     max-width: 70%;
     max-height: 70%;
+    border: var(--border);
 }
 
 .galeria:nth-child(2) img,
 .galeria:nth-child(4) img {
-    margin-left: auto; /* empuja la imagen hacia la derecha */
+    margin-left: auto;
 }
 
 
@@ -395,6 +400,90 @@ h1 {
 
 
 /* MEDIA QUERIES */
+
+/* TEXTOS ESCALADOS */
+/* @media (max-width: 900px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p, .text-info, .galeria h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p, .text-info, .galeria h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 2.7rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    p, .galeria h3 {
+        font-size: 0.9rem;
+    }
+} */
+
+
+/* MEDIA QUERIA 900PX */
+@media screen and (max-width: 900px) {
+    .text-info p {
+        padding: 8rem 3rem 0 3rem;
+    } 
+}
+
+/* MEDIA QUERIA 780PX */
+@media screen and (max-width: 780px) {
+    /* LUGARES */
+    .galeria {
+        padding: 0 2rem;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .galeria a img {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .galeria:nth-child(even),
+    .galeria:nth-child(odd) {
+        align-items: center !important;
+    }
+
+    .galeria h3 {
+        font-size: 2rem;
+    }
+
+    .text-info p {
+        padding: 8rem 1.5rem 0 1.5rem;
+        font-size: 1.3rem;
+    }
+}
+
+
+
+/* MEDIA QUERIA 678PX */
 @media screen and (max-width: 678px) {
 
     /* MENÚ */
@@ -421,7 +510,7 @@ h1 {
         position: fixed;
         top: 0;
         left: 0;
-        border: 1px solid var(--black);
+        border: var(--border);
 
     }
 
@@ -468,9 +557,21 @@ h1 {
         font-size: 4rem;
     }
 
-    h2 {
-        font-size: 1.1rem;
+    .header-title .h2-clima {
+        font-size: 2.2rem;
+        margin-left: 10px;
     }
+
+    .galeria h3 {
+        font-size: 1.8rem;
+    }
+
+    .text-info p {
+        padding: 8rem 1.5rem 0 1.5rem;
+        font-size: 1.3rem;
+    }
+
+
 
     /* FOOTER */
     #footer {
@@ -491,10 +592,6 @@ h1 {
     .footer-right {
         width: 100%;
         flex: unset;
-        /* text-align: center;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center; */
     }
 
     .footer-left .politics {
@@ -502,6 +599,12 @@ h1 {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
+    }
+
+    .footer-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .footer-right .social {
@@ -519,5 +622,16 @@ h1 {
         text-align: center;
         margin-top: 1.5rem;
     }
+}
 
+/* MEDIA QUERIA 400PX */
+@media screen and (max-width: 400px) {
+    .galeria h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-info p {
+        padding: 8rem 1.5rem 0 1.5rem;
+        font-size: 1.1rem;
+    } 
 }
