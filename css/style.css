@@ -104,6 +104,17 @@ header {
     position: relative;
     padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
+
+    background-image: url("../img/ilustracion.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 70px;
+    width: 100%;
+    max-width: 100vw;
+    /* min-height: 700px; */
+    height: calc(100vh - 70px);
+    background-position: center bottom;
+
 }
 
 #home {
@@ -128,24 +139,32 @@ h1 {
 
 .header-title > h2 {
     font: var(--h2);
-    position: absolute;
     margin-top: 2rem;
     display: inline-block;
-    transform-origin: 0 0;
     transform: rotate(-6deg);
 
 }
 
+/* 
 .img-header {
     width: 100%;
     overflow: hidden;
+    
+    background-image: url("../img/skyline_alc.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
 }
 
 .img-header img {
     width: 100%;
     height: auto;
     display: block;
-}
+} */
+
+
 
 .h2-lugares {
     margin-left: 115px;
@@ -154,6 +173,11 @@ h1 {
 .h2-clima {
     margin-left: -50px;
 }
+
+.h2-alc {
+    margin-left: 200px;
+}
+
 
 
 
@@ -233,7 +257,7 @@ h1 {
     flex-direction: column;
     font-family: var(--inter);
     font-size: 0.8rem;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
 }
 
 .footer-top {
@@ -620,14 +644,20 @@ h1 {
         font-size: 4rem;
     }
 
+    .header-title .size {
+        font-size: 1.5rem;
+    }
+
     .header-title .h2-lugares {
-        font-size: 2.2rem;
-        margin-left: 10px;
+        margin-left: -60px;
     }
 
     .header-title .h2-clima {
-        font-size: 2.2rem;
-        margin-left: -90px;
+        margin-left: -80px;
+    }
+
+    .header-title .h2-alc {
+        margin-left: 100px;
     }
 
     .galeria h3 {
@@ -639,6 +669,15 @@ h1 {
         font-size: 1.3rem;
     }
 
+    header {
+        background-image: url("../img/ilustracion_small.png");
+        width: 100%;                 /* ocupa todo el ancho */
+        height: calc(100vh - 70px);  /* altura de viewport menos nav */
+        background-size: cover;      /* llena el header sin dejar huecos */
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    
+    }
 
 
     /* FOOTER */
@@ -690,12 +729,24 @@ h1 {
         text-align: center;
         margin-top: 1.5rem;
     }
+
+    /* CLIMA */
+    #clima .btn a {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    
+    
+    
 }
 
-/* MEDIA QUERIA 400PX */
+
+
+/* MEDIA QUERIES 400PX */
 @media screen and (max-width: 400px) {
-    h1 {
-        font-size: 2rem;
+    .header-title h1 {
+        font-size: 4.2rem;
     }
 
     .galeria h3 {
@@ -706,4 +757,17 @@ h1 {
         padding: 8rem 1.5rem 1.5rem 1.5rem;
         font-size: 1.1rem;
     } 
+
+    .header-title .size {
+        font-size: 1.8rem;
+    }
+
+    .header-title .h2-clima {
+        margin-left: -60px;
+    }
+
+    .header-title .h2-alc {
+        margin-left: 60px;
+    }
+
 }
