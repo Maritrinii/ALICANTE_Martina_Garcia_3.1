@@ -147,9 +147,83 @@ h1 {
     display: block;
 }
 
-.h2-clima {
+.h2-lugares {
     margin-left: 115px;
 }
+
+.h2-clima {
+    margin-left: -50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* gráfica clima */
+/* Contenedor del gráfico */
+#graphic {
+    width: 100% !important;    /* que siempre llene el contenedor */
+    max-width: 800px;           /* ancho máximo que quieras */
+    height: 400px !important;   /* altura inicial */
+    display: block;
+    margin: 0 auto;   
+              /* centrar el gráfico */
+}
+
+
+/* Opcional: centrar todo el bloque del gráfico y la temperatura actual */
+#clima {
+    text-align: center;
+    margin-bottom: 6rem; /* aumenta este valor para más espacio */
+}
+
+/* Estilo de la temperatura actual */
+#actual {
+    font-family: 'highest-praise', sans-serif;
+    color: #0a0908;
+    font-size: 2rem;          /* ajusta a tu gusto */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Opcional: botón de actualizar centrado */
+#clima .btn a {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* FOOTER */
 #footer {
@@ -159,6 +233,7 @@ h1 {
     flex-direction: column;
     font-family: var(--inter);
     font-size: 0.8rem;
+    margin-top: 3rem;
 }
 
 .footer-top {
@@ -545,9 +620,14 @@ h1 {
         font-size: 4rem;
     }
 
-    .header-title .h2-clima {
+    .header-title .h2-lugares {
         font-size: 2.2rem;
         margin-left: 10px;
+    }
+
+    .header-title .h2-clima {
+        font-size: 2.2rem;
+        margin-left: -90px;
     }
 
     .galeria h3 {
@@ -614,6 +694,10 @@ h1 {
 
 /* MEDIA QUERIA 400PX */
 @media screen and (max-width: 400px) {
+    h1 {
+        font-size: 2rem;
+    }
+
     .galeria h3 {
         font-size: 1.5rem;
     }

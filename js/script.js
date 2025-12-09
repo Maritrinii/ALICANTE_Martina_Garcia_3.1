@@ -21,8 +21,6 @@ if (burger) {
 
 
 
-
-
 // --- GRÁFICO ---
 let grafico;
 
@@ -96,6 +94,7 @@ async function cargarDatos() {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: { 
                         labels: { 
