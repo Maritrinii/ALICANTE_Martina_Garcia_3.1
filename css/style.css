@@ -317,6 +317,10 @@ h1 {
     font: var(--text);
 }
 
+.btn {
+    padding-bottom: 4rem;
+}
+
 .btn a {
     text-decoration: none;
     font-family: var(--fraunces);
