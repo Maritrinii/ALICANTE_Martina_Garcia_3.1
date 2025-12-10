@@ -522,6 +522,10 @@ h1 {
     .header-title .h2-location {
         margin-left: 470px;
     }
+
+    .header-title .h2-alc {
+        margin-left: 110px;
+    }
 }
 
 /* MEDIA QUERIA 900PX */
