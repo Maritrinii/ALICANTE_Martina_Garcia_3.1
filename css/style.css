@@ -163,7 +163,7 @@ h1 {
 }
 
 .h2-lugares {
-    margin-left: 430px;
+    margin-left: 360px;
 }
 
 .h2-clima {
@@ -488,6 +488,21 @@ h1 {
     margin-left: auto;
 }
 
+.img-cont .galeria img {
+    filter: grayscale(100%);
+    transition: var(--transition);
+}
+
+.img-cont .galeria img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+
+
+
+
+
 
 /* CURIOSIDADES */
 #curiosity {
@@ -560,6 +575,10 @@ h1 {
     .header-title .h2-alc {
         margin-left: 110px;
     }
+
+    .header-title .h2-lugares {
+        margin-left: 250px;
+    }
 }
 
 /* MEDIA QUERIA 900PX */
@@ -577,6 +596,11 @@ h1 {
         align-items: center;
         flex: 0 0 auto;
     }
+
+    .header-title .h2-lugares {
+        margin-left: 250px;
+    }
+
 }
 
 /* MEDIA QUERIA 800PX */
@@ -591,6 +615,10 @@ h1 {
 
     .header-title .h2-location {
         margin-left: 400px;
+    }
+
+    .header-title .h2-lugares {
+        margin-left: 220px;
     }
 }
 
@@ -700,11 +728,11 @@ h1 {
     }
 
     .header-title .size {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .header-title .h2-lugares {
-        margin-left: 210px;
+        margin-left: 140px;
     }
 
     .header-title .h2-clima {
