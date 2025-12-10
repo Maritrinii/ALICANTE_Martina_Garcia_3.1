@@ -139,84 +139,51 @@ h1 {
 
 .header-title > h2 {
     font: var(--h2);
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     display: inline-block;
     transform: rotate(-6deg);
 
 }
 
-/* 
-.img-header {
-    width: 100%;
-    overflow: hidden;
-    
-    background-image: url("../img/skyline_alc.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-
-}
-
-.img-header img {
-    width: 100%;
-    height: auto;
-    display: block;
-} */
-
-
-
 .h2-lugares {
-    margin-left: 115px;
+    margin-left: 430px;
 }
 
 .h2-clima {
-    margin-left: -50px;
+    margin-left: 160px;
 }
 
 .h2-alc {
     margin-left: 200px;
 }
 
-
-
-
-
-
-
-
-
-
+.h2-location {
+    margin-left: 670px;
+}
 
 
 /* gráfica clima */
-/* Contenedor del gráfico */
 #graphic {
-    width: 100% !important;    /* que siempre llene el contenedor */
-    max-width: 800px;           /* ancho máximo que quieras */
-    height: 400px !important;   /* altura inicial */
+    width: 100% !important;
+    max-width: 800px;
+    height: 400px !important;
     display: block;
     margin: 0 auto;   
-              /* centrar el gráfico */
 }
 
-
-/* Opcional: centrar todo el bloque del gráfico y la temperatura actual */
 #clima {
     text-align: center;
-    margin-bottom: 6rem; /* aumenta este valor para más espacio */
+    margin-bottom: 6rem;
 }
 
-/* Estilo de la temperatura actual */
 #actual {
     font-family: 'highest-praise', sans-serif;
     color: #0a0908;
-    font-size: 2rem;          /* ajusta a tu gusto */
+    font-size: 2rem;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-/* Opcional: botón de actualizar centrado */
 #clima .btn a {
     display: inline-block;
     margin: 0 auto;
@@ -319,14 +286,6 @@ h1 {
     scroll-margin-top: 70px;
 }
 
-.cont-info {
-    display: flex;
-    gap: 2rem;
-    padding: var(--padding-text);
-    justify-content: center;
-    align-items: flex-start;
-}
-
 .img-left {
     flex: 1;
 }
@@ -337,17 +296,36 @@ h1 {
     display: block;
 }
 
+.cont-info {
+    display: flex;
+    gap: 2rem;
+    padding: 5rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 0 0 auto;
+}
+
 .text-right {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    text-position
 }
 
-.text-right .description {
+.text-right .text-info {
     font-family: var(--inter);
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.list-alc {
+    display: flex;
+    justify-content: center; 
+    gap: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .text-right .list-alc {
@@ -389,7 +367,7 @@ h1 {
     list-style-position: inside;
     padding-left: 0;
     margin-left: 0;
-    text-align: left;
+    text-align: center;
 }
 
 .list-alc ol li {
@@ -412,7 +390,7 @@ h1 {
 }
 
 .text-info p {
-    padding: var(--padding-text);
+    padding:2rem 0;
     font: var(--text);
 }
 
@@ -531,12 +509,51 @@ h1 {
     }
 } */
 
+/* MEDIA QUERIA 1050PX */
+@media screen and (max-width: 1050px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    .header-title .size {
+        font-size: 2.5rem;
+    }
+
+    .header-title .h2-location {
+        margin-left: 470px;
+    }
+}
 
 /* MEDIA QUERIA 900PX */
 @media screen and (max-width: 900px) {
     .text-info p {
         padding: 8rem 3rem 3rem 3rem;
     } 
+
+    .cont-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 5rem;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+    }
+}
+
+/* MEDIA QUERIA 800PX */
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    .header-title .size {
+        font-size: 2rem;
+    }
+
+    .header-title .h2-location {
+        margin-left: 400px;
+    }
 }
 
 /* MEDIA QUERIA 780PX */
@@ -649,15 +666,19 @@ h1 {
     }
 
     .header-title .h2-lugares {
-        margin-left: -60px;
+        margin-left: 210px;
     }
 
     .header-title .h2-clima {
-        margin-left: -80px;
+        margin-left: 80px;
     }
 
     .header-title .h2-alc {
         margin-left: 100px;
+    }
+
+    .header-title .h2-location {
+        margin-left: 330px;
     }
 
     .galeria h3 {
@@ -665,15 +686,15 @@ h1 {
     }
 
     .text-info p {
-        padding: 8rem 1.5rem 1.5rem 1.5rem;
-        font-size: 1.3rem;
+        padding: 6rem 1.5rem 1.5rem 1.5rem;
+        font-size: 1.1rem;
     }
 
     header {
         background-image: url("../img/ilustracion_small.png");
-        width: 100%;                 /* ocupa todo el ancho */
-        height: calc(100vh - 70px);  /* altura de viewport menos nav */
-        background-size: cover;      /* llena el header sin dejar huecos */
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center bottom;
     
@@ -741,9 +762,25 @@ h1 {
     
 }
 
+/* MEDIA QUERIA 550PX */
+@media screen and (max-width: 550px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .header-title .size {
+        font-size: 2rem;
+    }
+
+    .header-title .h2-location {
+        margin-left: 47px;
+    }
+}
 
 
-/* MEDIA QUERIES 400PX */
+
+
+/* MEDIA QUERIES 400PX
 @media screen and (max-width: 400px) {
     .header-title h1 {
         font-size: 4.2rem;
@@ -770,4 +807,4 @@ h1 {
         margin-left: 60px;
     }
 
-}
+} */
