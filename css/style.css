@@ -20,11 +20,27 @@
     background-color: var(--orange);
 }
 
+/* CURSOR */
+html {
+    cursor: url("../img/cursor.png") , auto;
+}
+
+html:active {
+    cursor: url("../img/cursor_click.png"), auto;
+}
+
+a:hover {
+    cursor: url("../img/cursor_click.png"), pointer;
+}
+
+
+
 :root {
     --h1: 900 8rem "Fraunces", serif;
     --h2: 400 3rem "highest-praise", sans-serif;
     --h3: 1.5rem "Inter", sans serif;
     --text: 1.3rem "Inter", sans serif;
+    --col: 300 1.3rem "Inter", sans serif;
     --black:#0a0908;
     --orange: #ff8811;
     --blue: #0080c9;
@@ -32,6 +48,7 @@
     --fraunces: fraunces, serif;
     --padding-text: 10rem 10rem 6rem 10rem;
     --border: 1px solid var(--black);
+    --transition: 0.2s ease-in-out;
 }
 
 html {
@@ -349,11 +366,11 @@ h1 {
 }
 
 
-.text-right .list-alc ol li {
+/* .text-right .list-alc ol li {
     margin-bottom: 0.5rem;
     font-family: var(--fraunces);
     font-size: 0.95rem;
-}
+} */
 
 .text-right .list-alc ol {
     flex: 0 1 48%;
@@ -374,6 +391,23 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
+.col1,
+.col2 {
+    font: var(--col);
+}
+
+.col1 a,
+.col2 a {
+    color: var(--black);
+    transition: var(--transition);
+}
+
+/* Efecto hover enlaces */
+.col1 a:hover,
+.col2 a:hover {
+    color: var(--black);
+    font-weight: 700;
+}
 
 
 
