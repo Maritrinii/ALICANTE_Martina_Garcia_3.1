@@ -40,6 +40,7 @@ a:hover {
     --h2: 400 3rem "highest-praise", sans-serif;
     --h3: 1.5rem "Inter", sans serif;
     --text: 1.3rem "Inter", sans serif;
+    --italic: italic 700 1.3rem "Inter", sans-serif;
     --col: 300 1.3rem "Inter", sans serif;
     --black:#0a0908;
     --orange: #ff8811;
@@ -426,6 +427,14 @@ h1 {
 .text-info p {
     padding: 4rem 6rem 2rem 6rem;
     font: var(--text);
+}
+
+.text-info .p2 {
+    padding: 0 6rem 4rem 6rem;
+}
+
+.text-info em {
+    font: var(--italic);
 }
 
 .btn {
