@@ -10,17 +10,6 @@ if (burger) {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
 // --- GRÁFICO ---
 let grafico;
 
@@ -30,11 +19,10 @@ async function cargarDatos() {
         const resp = await fetch(url);
         const datos = await resp.json();
 
-        // Mostrar temperatura actual
         const tempActual = datos.current_weather.temperature;
         const actualDiv = document.getElementById("actual");
         if (!actualDiv) {
-            // Crear div si no existe
+
             const nuevoDiv = document.createElement("div");
             nuevoDiv.id = "actual";
             nuevoDiv.style.textAlign = "center";
@@ -44,17 +32,7 @@ async function cargarDatos() {
             nuevoDiv.style.fontSize = "1.8rem";
             document.querySelector("#clima").appendChild(nuevoDiv);
         }
-        document.getElementById("actual").innerHTML = `Temperatura actual: <strong style="color:#0a0908; font-family: 'highest-praise'; font-size: 50px; font-weight: normal;">${tempActual}°C</strong>`;
-
-        // Datos para gráfico
-
-        // const fechas = datos.daily.time;
-
-        // const diasSemana = ["D", "L", "M", "X", "J", "V", "S"];
-        //     const fechas = datos.daily.time.map(fechaStr    => {
-        //     const fecha = new Date(fechaStr);
-        //     return diasSemana[fecha.getDay()];
-        // });
+        document.getElementById("actual").innerHTML = `<span class="temp-number">${tempActual}°C</span><span class="temp-label">(TEMPERATURA ACTUAL)</span>`;
 
         const fechas = datos.daily.time.map(fechaStr => {
             const fecha = new Date(fechaStr);
@@ -66,9 +44,8 @@ async function cargarDatos() {
         const tempMax = datos.daily.temperature_2m_max;
         const tempMin = datos.daily.temperature_2m_min;
 
-        // Crear gráfico
         const ctx = document.getElementById("graphic").getContext("2d");
-        if (grafico) grafico.destroy(); // destruir gráfico previo
+        if (grafico) grafico.destroy();
         grafico = new Chart(ctx, {
             type: "line",
             data: {
@@ -116,7 +93,6 @@ async function cargarDatos() {
                 scales: {
                     y: {
                         ticks: {
-                            // Esto agrega °C a cada número del eje
                             callback: function(value) {
                                 return value + "°";
                             },
@@ -124,7 +100,7 @@ async function cargarDatos() {
                             font: { family: "'Inter', sans-serif", size: 12 }
                         },
                         title: {
-                            display: false  // quitamos el título del eje
+                            display: false
                         }
                     },
                     x: {
@@ -133,7 +109,7 @@ async function cargarDatos() {
                             font: { family: "'Inter', sans-serif", size: 12 }
                         },
                         title: {
-                            display: false // quitamos título del eje X si quieres
+                            display: false
                         }
                     }
                 }
@@ -156,3 +132,25 @@ btn.addEventListener("click", (e) => {
 
 // --- CARGAR AL INICIO ---
 cargarDatos();
+
+
+// CURSOR -> PALABRAS
+const cursorText = document.createElement('div');
+cursorText.classList.add('custom-cursor');
+document.body.appendChild(cursorText);
+
+document.querySelectorAll('.text-info em').forEach(em => {
+    em.addEventListener('mouseenter', (e) => {
+        cursorText.textContent = em.getAttribute('data-msg');
+        cursorText.style.display = 'block';
+    });
+
+    em.addEventListener('mouseleave', () => {
+        cursorText.style.display = 'none';
+    });
+
+    em.addEventListener('mousemove', (e) => {
+        cursorText.style.left = e.clientX + 'px';
+        cursorText.style.top = e.clientY + 'px';
+    });
+});

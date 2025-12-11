@@ -33,14 +33,32 @@ a:hover {
     cursor: url("../img/cursor_click.png"), pointer;
 }
 
+/* Cursor -> palabra */
+.custom-cursor {
+    font: var(--cursor-text);
+    position: fixed;
+    pointer-events: none;
+    color: var(--black);
+    background-color: var(--blue);
+    border: var(--border);
+    padding: 0.3rem 0.6rem;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    display: none;
+    white-space: nowrap;
+}
+
 
 
 :root {
     --h1: 900 8rem "Fraunces", serif;
     --h2: 400 3rem "highest-praise", sans-serif;
     --h3: 1.5rem "Inter", sans serif;
-    --text: 1.3rem "Inter", sans serif;
+    --text: 300 1.3rem "Inter", sans serif;
     --italic: italic 700 1.3rem "Inter", sans-serif;
+    --cursor-text: 900 1rem "Fraunces", serif;
+    --temp: 300 1rem "Inter", sans serif;
+    --number: 400 5rem "highest-praise", sans-serif;
     --col: 300 1.3rem "Inter", sans serif;
     --black:#0a0908;
     --orange: #ff8811;
@@ -179,61 +197,6 @@ h1 {
     margin-left: 670px;
 }
 
-
-/* gráfica clima */
-#graphic {
-    width: 100% !important;
-    max-width: 800px;
-    height: 400px !important;
-    display: block;
-    margin: 0 auto;   
-}
-
-#clima {
-    text-align: center;
-    margin-bottom: 6rem;
-}
-
-#actual {
-    font-family: 'highest-praise', sans-serif;
-    color: #0a0908;
-    font-size: 2rem;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#clima .btn a {
-    display: inline-block;
-    margin: 0 auto;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* FOOTER */
 #footer {
     border: var(--border);
@@ -366,13 +329,6 @@ h1 {
     gap: 1rem;
 }
 
-
-/* .text-right .list-alc ol li {
-    margin-bottom: 0.5rem;
-    font-family: var(--fraunces);
-    font-size: 0.95rem;
-} */
-
 .text-right .list-alc ol {
     flex: 0 1 48%;
     list-style-position: inside;
@@ -403,18 +359,11 @@ h1 {
     transition: var(--transition);
 }
 
-/* Efecto hover enlaces */
 .col1 a:hover,
 .col2 a:hover {
     color: var(--black);
     font-weight: 700;
 }
-
-
-
-
-
-
 
 /* CLIMA */
 #clima {
@@ -422,6 +371,7 @@ h1 {
     position: relative;
     padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
+    text-align: center;
 }
 
 .text-info p {
@@ -437,8 +387,13 @@ h1 {
     font: var(--italic);
 }
 
+#clima .btn a {
+    display: inline-block;
+    margin: 0 auto;
+}
+
 .btn {
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
 }
 
 .btn a {
@@ -448,9 +403,42 @@ h1 {
     background-color: var(--blue);
     color: var(--black);
     border: var(--border);
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
 }
 
+.separar {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding-bottom: 6rem;
+}
+
+/* gráfica clima */
+#graphic {
+    width: 100% !important;
+    max-width: 800px;
+    height: 400px !important;
+    display: block;
+    margin: 0 auto;   
+}
+
+#actual {
+    font: var(--temp);
+    margin: 2rem 0 4rem 0;
+    text-align: center;
+}
+
+#actual .temp-number {
+    font: var(--number);
+    color: var(--black);
+    display: block;
+}
+
+#actual .temp-label {
+    font: var(--temp);
+    color: var(--black);
+    margin-top: 0.5rem;
+    display: block;
+}
 
 /* LUGARES */
 #lugares {
@@ -507,12 +495,6 @@ h1 {
     transform: scale(1.05);
 }
 
-
-
-
-
-
-
 /* CURIOSIDADES */
 #curiosity {
     text-align: center;
@@ -520,52 +502,6 @@ h1 {
     padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
-
-
-/* MEDIA QUERIES */
-
-/* TEXTOS ESCALADOS */
-/* @media (max-width: 900px) {
-    h1 {
-        font-size: 5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    p, .text-info, .galeria h3 {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 3.5rem;
-    }
-
-    h2 {
-        font-size: 1.4rem;
-    }
-
-    p, .text-info, .galeria h3 {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 400px) {
-    h1 {
-        font-size: 2.7rem;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-    }
-
-    p, .galeria h3 {
-        font-size: 0.9rem;
-    }
-} */
 
 /* MEDIA QUERIA 1050PX */
 @media screen and (max-width: 1050px) {
@@ -588,6 +524,10 @@ h1 {
     .header-title .h2-lugares {
         margin-left: 250px;
     }
+
+    .header-title .h2-clima {
+        margin-left: 100px;
+    }
 }
 
 /* MEDIA QUERIA 900PX */
@@ -595,6 +535,10 @@ h1 {
     .text-info p {
         padding: 8rem 3rem 3rem 3rem;
     } 
+
+    .text-info .p2 {
+        padding: 0rem 3rem 3rem 3rem;
+    }
 
     .cont-info {
         display: flex;
@@ -656,6 +600,14 @@ h1 {
 
     .text-info p {
         padding: 8rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .text-info .p2 {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .text-info p,
+    .text-info .p2 {
         font-size: 1.3rem;
     }
 }
@@ -745,7 +697,7 @@ h1 {
     }
 
     .header-title .h2-clima {
-        margin-left: 80px;
+        margin-left: 40px;
     }
 
     .header-title .h2-alc {
@@ -760,10 +712,20 @@ h1 {
         font-size: 1.8rem;
     }
 
-    .text-info p {
-        padding: 6rem 1.5rem 1.5rem 1.5rem;
+    .text-info p,
+    .text-info .p2 {
         font-size: 1.1rem;
     }
+
+    .text-info p,
+    .text-info .p2 {
+        padding: 6rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .text-info .p2 {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+    
 
     header {
         background-image: url("../img/ilustracion_small.png");
@@ -830,11 +792,7 @@ h1 {
     #clima .btn a {
         font-size: 1rem;
         padding: 1rem 1.5rem;
-    }
-
-    
-    
-    
+    }   
 }
 
 /* MEDIA QUERIA 550PX */
@@ -851,35 +809,3 @@ h1 {
         margin-left: 47px;
     }
 }
-
-
-
-
-/* MEDIA QUERIES 400PX
-@media screen and (max-width: 400px) {
-    .header-title h1 {
-        font-size: 4.2rem;
-    }
-
-    .galeria h3 {
-        font-size: 1.5rem;
-    }
-
-    .text-info p {
-        padding: 8rem 1.5rem 1.5rem 1.5rem;
-        font-size: 1.1rem;
-    } 
-
-    .header-title .size {
-        font-size: 1.8rem;
-    }
-
-    .header-title .h2-clima {
-        margin-left: -60px;
-    }
-
-    .header-title .h2-alc {
-        margin-left: 60px;
-    }
-
-} */
