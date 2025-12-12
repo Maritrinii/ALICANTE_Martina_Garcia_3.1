@@ -32,8 +32,10 @@ async function cargarDatos() {
             nuevoDiv.style.fontSize = "1.8rem";
             document.querySelector("#clima").appendChild(nuevoDiv);
         }
-        document.getElementById("actual").innerHTML = `<span class="temp-number">${tempActual}°C</span><span class="temp-label">(TEMPERATURA ACTUAL)</span>`;
-
+        document.getElementById("actual").innerHTML = `
+        <span class="temp-number">${tempActual}°C</span>
+        <span class="temp-label">(${translations[currentLang].clima_actual})</span>`;
+        
         const fechas = datos.daily.time.map(fechaStr => {
             const fecha = new Date(fechaStr);
             const dia = fecha.getDate().toString().padStart(2, '0');
@@ -46,77 +48,67 @@ async function cargarDatos() {
 
         const ctx = document.getElementById("graphic").getContext("2d");
         if (grafico) grafico.destroy();
+
+
+
         grafico = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: fechas,
-                datasets: [
-                    {
-                        label: "Máxima (°C)",
-                        data: tempMax,
-                        borderColor: "#0a0908",
-                        backgroundColor: "#ff8811",
-                        fill: false,
-                        tension: 0.3
-                    },
-                    {
-                        label: "Mínima (°C)",
-                        data: tempMin,
-                        borderColor: "#0080c9",
-                        backgroundColor:"#ff8811",
-                        fill: false,
-                        tension: 0.3
-                    }
-                ]
+    type: "line",
+    data: {
+        labels: fechas,
+        datasets: [
+            {
+                label: translations[currentLang].clima_label_max,
+                data: tempMax,
+                borderColor: "#0a0908",
+                backgroundColor: "#ff8811",
+                fill: false,
+                tension: 0.3
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { 
-                        labels: { 
-                            font: { 
-                                family: "'Inter', sans-serif",
-                                size: 12,
-                                weight: "200" 
-                            },
-                            color: "#0a0908" 
-                        } 
-                    },
-                    title: {
-                        display: true,
-                        text: "Temperaturas diarias",
-                        font: { family: "'Inter', sans-serif", size: "15", weight: "200" },
-                        color: "#0a0908"
-                    }
-                },
-                scales: {
-                    y: {
-                        ticks: {
-                            callback: function(value) {
-                                return value + "°";
-                            },
-                            color: "#0a0908",
-                            font: { family: "'Inter', sans-serif", size: 12 }
-                        },
-                        title: {
-                            display: false
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color: "#000000",
-                            font: { family: "'Inter', sans-serif", size: 12 }
-                        },
-                        title: {
-                            display: false
-                        }
-                    }
-                }
-                
-                
+            {
+                label: translations[currentLang].clima_label_min,
+                data: tempMin,
+                borderColor: "#0080c9",
+                backgroundColor:"#ff8811",
+                fill: false,
+                tension: 0.3
             }
-        });
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { 
+                labels: { 
+                    font: { family: "'Inter', sans-serif", size: 12, weight: "200" },
+                    color: "#0a0908" 
+                } 
+            },
+            title: {
+                display: true,
+                text: translations[currentLang].clima_titulo_grafico,
+                font: { family: "'Inter', sans-serif", size: 15, weight: "200" },
+                color: "#0a0908"
+            }
+        },
+        scales: {
+            y: {
+                ticks: {
+                    callback: function(value) { return value + "°"; },
+                    color: "#0a0908",
+                    font: { family: "'Inter', sans-serif", size: 12 }
+                }
+            },
+            x: {
+                ticks: {
+                    color: "#000000",
+                    font: { family: "'Inter', sans-serif", size: 12 }
+                }
+            }
+        }
+    }
+});
+
 
     } catch (error) {
         console.error("Error cargando datos:", error);
@@ -231,6 +223,11 @@ function changeLanguage(lang) {
     const climaP3 = document.getElementById("clima-p3");
     if (climaP3) climaP3.innerHTML = translations[lang].clima_p3;
 
+    const climaBtn = document.getElementById("clima-btn");
+    if (climaBtn) climaBtn.textContent = translations[lang].clima_btn_actualizar;
+
+
+
         //localización
     const localizacionP1 = document.getElementById("localizacion-p1");
     if (localizacionP1) localizacionP1.innerHTML = translations[lang].localizacion_p1;
@@ -278,47 +275,11 @@ function changeLanguage(lang) {
   
     const footerCookies = document.getElementById("footer-cookies");
     if (footerCookies) footerCookies.innerHTML = translations[lang].footer_cookies;
+
+    // --- Actualizar gráfico y temperatura actual ---
+    cargarDatos(); // esto recarga la temperatura y vuelve a dibujar el gráfico con los textos correctos del idioma
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const langBtn = document.getElementById("lang-toggle");
 
 langBtn.addEventListener("click", () => {
@@ -360,6 +321,11 @@ const translations = {
       clima_p1: `En Alicante <em data-msg="HACE CALOR">fa caloret</em> prácticamente todo el año, incluso tenemos veroño, ese verano-otoño que ya ni sabemos en qué estación vivimos. Aquí solo caen cuatro gotas contadas al año, pero cuando llueve… ¡madre mía! Cae a mares y se monta un atasco que ni en hora punta. El resto de días el sol pega tan fuerte que la vegetación está hecha un completo <em data-msg="ACHICHARRADO">socarrat</em>.`,
       clima_p2: `Pero ojo, que aunque tengamos sol para aburrir, en invierno <em data-msg="HACE FRESCO ALICANTINO">fa frescoreta alicantina</em>, ese frío húmedo que se te mete en los huesos y no se te va ni con una ducha caliente. Y si tu pelo se estufarra con la humedad… tráete una plancha, porque aquí la vas a usar.`,
       clima_p3: `Antes de venir, mira la temperatura para el outfit saber elegir:`,
+      clima_actual: "TEMPERATURA ACTUAL",
+      clima_btn_actualizar: "ACTUALIZAR",
+      clima_titulo_grafico: "Temperaturas diarias",
+      clima_label_max: "Máxima (°C)",
+      clima_label_min: "Mínima (°C)",
 
         //localización
       localizacion_p1:`<em data-msg="ALICANTE, EL MEJOR SITIO DEL MUNDO">“Alacant, la millor terreta del món”</em>. No lo decimos los alicantinos, lo dice Mariano Roca de Togores.`,
@@ -421,6 +387,11 @@ const translations = {
       clima_p1: `In Alicante, <em data-msg="IT'S HOT">fa caloret</em> practically all year round; we even have veroño, that summer-autumn when we no longer know which season we’re actually living in. It rains very little throughout the year, but when it rains… wow! It pours cats and dogs, and traffic jams happen like it’s rush hour. The rest of the days, the sun hits so hard that the vegetation is completely <em data-msg="SCORCHING">socarrat</em>.`,
       clima_p2: `But watch out, because even though we have sun to spare, in winter <em data-msg="CHILLY BREEZE">fa frescoreta alicantina</em>, that damp cold that gets into your bones and doesn’t go away even with a hot shower. And if your hair gets frizzy from the humidity… bring a straightener, because you’re going to need it here.`,
       clima_p3: `Before coming, check the temperature to know what outfit to choose:`,
+      clima_actual: "CURRENT TEMPERATURE",
+      clima_btn_actualizar: "UPDATE",
+      clima_titulo_grafico: "Daily Temperatures",
+      clima_label_max: "Maximum (°C)",
+      clima_label_min: "Minimum (°C)",
 
         //localización
       localizacion_p1:`<em data-msg="ALICANTE, THE BEST PLACE IN THE WORLD">“Alacant, la millor terreta del món.”</em> We Alicante locals don’t say it ourselves—Mariano Roca de Togores says it.`,
@@ -447,4 +418,5 @@ const translations = {
     },
 
   };
+
   

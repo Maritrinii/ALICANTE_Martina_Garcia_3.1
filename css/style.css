@@ -54,6 +54,7 @@ a:hover {
     --h1: 900 8rem "Fraunces", serif;
     --h2: 400 3rem "highest-praise", sans-serif;
     --h3: 1.5rem "Inter", sans serif;
+    --nav: 1.2rem "Inter", sans serif;
     --text: 300 1.3rem "Inter", sans serif;
     --italic: italic 700 1.3rem "Inter", sans-serif;
     --cursor-text: 900 1rem "Fraunces", serif;
@@ -128,35 +129,25 @@ nav .menu-right {
 
 .lang-btn {
     height: 70px;
-    padding: 0.5rem 1rem;
-    border: none;
-    background: var(--blue);
-    color: #fff;
+    padding: 0.5rem 2rem;
+    background: inherit;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0;
-}
-
-.lang-btn:hover {
-    background: var(--blue);
-}
-
-.lang-btn {
-    font-family: "Inter", sans-serif;
-    font-size: 1.1rem;
-    background-color: var(--blue);
     border: var(--border);
     color: var(--black);
-    padding: 0.4rem 2rem ;
     cursor: pointer;
     transition: var(--transition);
+    font: var(--nav);
 }
 
 .lang-btn:hover {
-    background-color: var(--orange);
+    font-weight: 700;
+    background-color: #0a090830;
 }
+
+
 
 .right-block {
     display: flex;
@@ -175,8 +166,7 @@ nav .menu-right {
 .menu a {
     color: var(--black);
     text-decoration: none;
-    font-family: "Inter", sans-serif;
-    font-size: 1.2rem;
+    font:var(--nav);
     transition: color 0.3s;
 }
 
@@ -482,7 +472,7 @@ h1 {
 
 #actual {
     font: var(--temp);
-    margin: 2rem 0 4rem 0;
+    margin: 0 0 4rem 0;
     text-align: center;
 }
 
@@ -728,9 +718,14 @@ h1 {
         box-sizing: border-box;
         border-top: var(--border);
         border-bottom: var(--border);
-        background-color: var(--orange);
+        background-color: inherit;
         color: var(--black);
-        left: 0;                 
+        left: 0;  
+        font-size: 2rem;               
+    }
+
+    nav.menu-open #lang-toggle:hover {
+        background-color: #0a090830;
     }
 
     nav.menu-open .menu-right li {
@@ -751,12 +746,18 @@ h1 {
         width: 100%;               
     }
 
-    .logo-menu,
-    .burger {
+    .logo-menu {
         position: absolute;
         top: 15px;
         left: 20px;
     }
+
+    .burger {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
 
     /* HEADER */
     h1 {
