@@ -18,34 +18,37 @@
   </head>
   
   <body class="theme-blue">
+
     <!-- MENÚ WEB -->
     <nav>
-        <div class="menu-container">
-          <ul class="menu menu-left">
-            <li><a href="location.html">LOCALIZACIÓN</a></li>
-            <li><a href="clima.html" class="btn">CLIMA</a></li>
-          </ul>  
-  
-          <div class="logo-menu">
-            <a href="index.html">ALC</a>
-          </div>
-  
+      <div class="menu-container">
+        <ul class="menu menu-left">
+          <li><a href="location.html" id="menu-localizacion">LOCALIZACIÓN</a></li>
+          <li><a href="clima.html" class="btn" id="menu-clima">CLIMA</a></li>
+        </ul>  
+
+        <div class="logo-menu">
+          <a href="index.html">ALC</a>
+        </div>
+
+        <div class="right-block">
           <ul class="menu menu-right">
-            <li><a href="lugares.html">LUGARES</a></li>
-            <li><a href="curiosity.html">CURIOSIDADES</a></li>
+            <li><a href="lugares.html" id="menu-lugares">LUGARES</a></li>
+            <li><button id="lang-toggle" class="lang-btn">EN</button></li>
           </ul>
-  
+        </div>
+
           <div class="burger">
             <i class="fas fa-bars"></i>
           </div>
-        </div>
-      </nav>
+      </div>
+    </nav>
 
       <!-- LOCALIZACIÓN SECTION -->
     <section id="location">
       <div class="header-title">
-        <h1>LOCALIZACIÓN</h1>
-        <h2 class="h2-location size">SOM FILLS DEL POBLE</h2>
+        <h1 id="titulo-localizacion">LOCALIZACIÓN</h1>
+        <h2 id="subtitle-localizacion" class="h2-location size">SOM FILLS DEL POBLE</h2>
       </div>
 
       <div class="cont-info">
@@ -55,9 +58,9 @@
 
         <div class="text-right">
           <div class="text-info">
-            <p><em data-msg="HACE CALOR">“Alacant, la millor terreta del món”</em>. No lo decimos los alicantinos, lo dice Mariano Roca de Togores.
-            <p class="p2">Ubicada en la costa del Mar Mediterráneo, en la Comunidad Valenciana, entre Valencia y Murcia, cuenta con un gran sistema montañoso… aunque no lo parezca. Esto se debe a que forma parte de las cordilleras Béticas. Contamos con la Sierra de Aitana, que alcanza los 1.558 metros de altura. Aquí no te hace falta ir al gimnasio: entre cuestas y más cuestas, completas el cupo de deporte</p>
-            <p class="p2">La provincia cuenta con 141 municipios y casi dos millones de habitantes, aunque en invierno está pelao y en verano está lleno de gambas rojas (y no son las de Dénia).</p>
+            <p id="localizacion-p1"><em data-msg="HACE CALOR">“Alacant, la millor terreta del món”</em>. No lo decimos los alicantinos, lo dice Mariano Roca de Togores.
+            <p id="localizacion-p2" class="p2">Ubicada en la costa del Mar Mediterráneo, en la Comunidad Valenciana, entre Valencia y Murcia, cuenta con un gran sistema montañoso… aunque no lo parezca. Esto se debe a que forma parte de las cordilleras Béticas. Contamos con la Sierra de Aitana, que alcanza los 1.558 metros de altura. Aquí no te hace falta ir al gimnasio: entre cuestas y más cuestas, completas el cupo de deporte.</p>
+            <p id="localizacion-p3" class="p2">La provincia cuenta con 141 municipios y casi dos millones de habitantes, aunque en invierno está pelao y en verano está lleno de gambas rojas (y no son las de Dénia).</p>
           </div>
 
           <div class="list-alc">
@@ -88,9 +91,9 @@
 
         <div class="footer-left">
           <div class="politics">
-            <p>POLÍTICA DE PRIVACIDAD</p>
-            <p>AVISO LEGAL</p>
-            <p>CONFIGURACIÓN DE COOKIES</p>
+            <p id="footer-politica">POLÍTICA DE PRIVACIDAD</p>
+            <p id="footer-aviso">AVISO LEGAL</p>
+            <p id="footer-cookies">CONFIGURACIÓN DE COOKIES</p>
           </div>
         </div>
 

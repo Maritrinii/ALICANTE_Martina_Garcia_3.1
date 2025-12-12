@@ -18,47 +18,50 @@
   </head>
 
   <body class="theme-orange">
+
     <!-- MENÚ WEB -->
     <nav>
       <div class="menu-container">
         <ul class="menu menu-left">
-          <li><a href="location.html">LOCALIZACIÓN</a></li>
-          <li><a href="clima.html" class="btn">CLIMA</a></li>
+          <li><a href="location.html" id="menu-localizacion">LOCALIZACIÓN</a></li>
+          <li><a href="clima.html" class="btn" id="menu-clima">CLIMA</a></li>
         </ul>  
 
         <div class="logo-menu">
           <a href="index.html">ALC</a>
         </div>
 
-        <ul class="menu menu-right">
-          <li><a href="lugares.html">LUGARES</a></li>
-          <li><a href="curiosity.html">CURIOSIDADES</a></li>
-        </ul>
-
-        <div class="burger">
-          <i class="fas fa-bars"></i>
+        <div class="right-block">
+          <ul class="menu menu-right">
+            <li><a href="lugares.html" id="menu-lugares">LUGARES</a></li>
+            <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+          </ul>
         </div>
+
+          <div class="burger">
+            <i class="fas fa-bars"></i>
+          </div>
       </div>
     </nav>
 
     <!-- CLIMA SECTION -->
     <section id="clima">
       <div class="header-title">
-        <h1>CLIMA</h1>
-        <h2 class="h2-clima size">CALORET FALLER</h2>
+        <h1 id="titulo-clima">CLIMA</h1>
+        <h2 id="subtitle-clima" class="h2-clima size">CALORET FALLER</h2>
       </div>
 
       <div class="text-info">
-        <p>En Alicante <em data-msg="HACE CALOR">fa caloret</em> prácticamente todo el año, incluso tenemos veroño, ese verano-otoño que ya ni sabemos en qué estación vivimos. Aquí solo caen cuatro gotas contadas al año, pero cuando llueve… ¡madre mía! Cae a mares y se monta un atasco que ni en hora punta. El resto de días el sol pega tan fuerte que la vegetación está hecha un completo <em data-msg="ACHICHARRADO">socarrat</em>.</p>
-        <p class="p2">Pero ojo, que aunque tengamos sol para aburrir, en invierno <em data-msg="HACE FRESCO ALICANTINO">fa frescoreta alicantina</em>, ese frío húmedo que se te mete en los huesos y no se te va ni con una ducha caliente. Y si tu pelo se estufarra con la humedad… tráete una plancha, porque aquí la vas a usar.
+        <p id="clima-p1">En Alicante <em data-msg="HACE CALOR">fa caloret</em> prácticamente todo el año, incluso tenemos veroño, ese verano-otoño que ya ni sabemos en qué estación vivimos. Aquí solo caen cuatro gotas contadas al año, pero cuando llueve… ¡madre mía! Cae a mares y se monta un atasco que ni en hora punta. El resto de días el sol pega tan fuerte que la vegetación está hecha un completo <em data-msg="ACHICHARRADO">socarrat</em>.</p>
+        <p id="clima-p2" class="p2">Pero ojo, que aunque tengamos sol para aburrir, en invierno <em data-msg="HACE FRESCO ALICANTINO">fa frescoreta alicantina</em>, ese frío húmedo que se te mete en los huesos y no se te va ni con una ducha caliente. Y si tu pelo se estufarra con la humedad… tráete una plancha, porque aquí la vas a usar.
         </p>
-        <p class="p2">Antes de venir, mira la temperatura para el outfit saber elegir:</p>
+        <p id="clima-p3" class="p2">Antes de venir, mira la temperatura para el outfit saber elegir:</p>
       </div>
 
       <div id="actual"></div>
 
       <div class="btn">
-        <a href="#">ACTUALIZAR</a>
+        <a href="#" id="clima-btn">ACTUALIZAR</a>
       </div>
     </section>
 
@@ -74,18 +77,15 @@
       <div id="graphicCont"></div>
     </div>
 
-
-
-
     <!-- FOOTER -->
     <footer id="footer">
       <div class="footer-top">
 
         <div class="footer-left">
           <div class="politics">
-            <p>POLÍTICA DE PRIVACIDAD</p>
-            <p>AVISO LEGAL</p>
-            <p>CONFIGURACIÓN DE COOKIES</p>
+            <p id="footer-politica">POLÍTICA DE PRIVACIDAD</p>
+            <p id="footer-aviso">AVISO LEGAL</p>
+            <p id="footer-cookies">CONFIGURACIÓN DE COOKIES</p>
           </div>
         </div>
 

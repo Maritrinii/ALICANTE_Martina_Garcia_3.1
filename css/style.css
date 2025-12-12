@@ -96,7 +96,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0 0 0 2rem;
 }
   
 .logo-menu a {
@@ -106,6 +106,61 @@ nav {
     font-size: 2rem;
     color: var(--black); 
 
+}
+
+nav .menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav .menu-right {
+    display: flex;
+    align-items: center;
+}
+
+.lang-btn {
+    height: 70px;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+}
+
+.lang-btn:hover {
+    background: var(--blue);
+}
+
+.lang-btn {
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    background-color: var(--blue);
+    border: var(--border);
+    color: var(--black);
+    padding: 0.4rem 2rem ;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lang-btn:hover {
+    background-color: var(--orange);
+}
+
+.right-block {
+    display: flex;
+    height: 100%;
 }
   
 /* MENÚ */
@@ -125,6 +180,16 @@ nav {
     transition: color 0.3s;
 }
 
+.menu-right li {
+    display: flex;
+    align-items: center;
+}
+
+nav.menu-open .menu-left,
+nav.menu-open .menu-right {
+    display: flex;
+    flex-direction: column;
+}
   
 /* BURGER */
   .burger {
@@ -147,7 +212,6 @@ header {
     background-position: center 70px;
     width: 100%;
     max-width: 100vw;
-    /* min-height: 700px; */
     height: calc(100vh - 70px);
     background-position: center bottom;
 
@@ -175,10 +239,8 @@ h1 {
 
 .header-title > h2 {
     font: var(--h2);
-    /* margin-top: 2rem; */
     display: inline-block;
     transform: rotate(-6deg);
-
 }
 
 .h2-lugares {
@@ -205,7 +267,6 @@ h1 {
     flex-direction: column;
     font-family: var(--inter);
     font-size: 0.8rem;
-    /* margin-top: 3rem; */
 }
 
 .footer-top {
@@ -238,7 +299,6 @@ h1 {
     display: flex;
     justify-content: flex-end;
     color: var(--black);
-
 }
 
 .footer-right .social {
@@ -411,7 +471,7 @@ h1 {
     padding-bottom: 6rem;
 }
 
-/* gráfica clima */
+/* GRÁFICA CLIMA */
 #graphic {
     width: 100% !important;
     max-width: 800px;
@@ -446,7 +506,6 @@ h1 {
     padding: 5rem 0 0 0;
     scroll-margin-top: 70px;
 }
-
 
 .img-cont img {
     max-height: 300px;
@@ -617,69 +676,86 @@ h1 {
 @media screen and (max-width: 678px) {
 
     /* MENÚ */
+    .menu-container {
+        padding: 0;
+    } 
+
     .menu-left,
     .menu-right {
-        display: none;
+        display: none !important;
     }
 
     .burger {
         display: block;
     }
 
-    .menu-container {
-        justify-content: space-between;
-    } 
-
     nav.menu-open .menu-container {
+        background-color: var(--blue);
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         padding-top: 70px;
-        background-color: inherit;
         height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
         border: var(--border);
-
+        z-index: 1000;
     }
 
     nav.menu-open .menu-left,
-    nav.menu-open .menu-right {
-        display: flex;
+    nav.menu-open .menu-right,
+    nav.menu-open #lang-toggle {
+        display: flex !important;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
         margin-top: 2rem;
     }
 
-    .logo-menu {
-        position: absolute;
-        top: 15px;
-        left: 20px;
+    nav.menu-open .menu a {
+        color: var(--black) !important; 
+        font-size: 2rem;
+        text-decoration: none;
+    }  
+
+   nav.menu-open #lang-toggle {
+        display: block !important;
+        width: 100vw;          
+        margin: 0;            
+        padding: 1rem 0;       
+        text-align: center;
+        box-sizing: border-box;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        background-color: var(--orange);
+        color: var(--black);
+        left: 0;                 
     }
 
+    nav.menu-open .menu-right li {
+        display: flex;    
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0; 
+    }
+
+    nav.menu-open .menu-right {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 0;
+        width: 100%;               
+    }
+
+    .logo-menu,
     .burger {
         position: absolute;
         top: 15px;
-        right: 20px;
-        z-index: 1001;
-    }
-
-    nav.menu-open .logo-menu {
-        display: block;
-    }
-
-    nav.menu-open .menu a {
-        font-size: 2rem;
-    }
-
-    nav .menu a[href="#entradas"].btn {
-        display: block !important;
-        width: 100%;
-        text-align: center;
-        font-size: 2rem !important;
-        padding: 1rem 0 !important;
+        left: 20px;
     }
 
     /* HEADER */
@@ -724,7 +800,6 @@ h1 {
     .text-info .p2 {
         padding: 0 1.5rem 1.5rem 1.5rem;
     }
-    
 
     header {
         background-image: url("../img/ilustracion_small.png");
@@ -733,7 +808,6 @@ h1 {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center bottom;
-    
     }
 
 
@@ -785,13 +859,19 @@ h1 {
         width: 100%;
         text-align: center;
         margin-top: 1.5rem;
+    }  
+
+    #clima {
+        padding: 1rem 0;
     }
 
-    /* CLIMA */
-    #clima .btn a {
-        font-size: 1rem;
+    .text-info p {
         padding: 1rem 1.5rem;
-    }   
+    }
+
+    .text-info .p2 {
+        padding: 0.5rem 1.5rem;
+    }
 }
 
 /* MEDIA QUERIA 550PX */
