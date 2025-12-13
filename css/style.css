@@ -34,7 +34,7 @@ a:hover {
 }
 
 /* Cursor -> palabra */
-.custom-cursor {
+/* .custom-cursor {
     font: var(--cursor-text);
     position: fixed;
     pointer-events: none;
@@ -48,7 +48,18 @@ a:hover {
     white-space: nowrap;
 }
 
-
+.tooltip-hover {
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 9999;
+    transform: translate(-50%, -140%);
+  } */
 
 :root {
     --h1: 900 8rem "Fraunces", serif;
@@ -239,6 +250,10 @@ h1 {
 
 .h2-clima {
     margin-left: 160px;
+}
+
+.h2-clima.en {
+    margin-left: 2000px;
 }
 
 .h2-alc {
@@ -453,6 +468,12 @@ h1 {
     color: var(--black);
     border: var(--border);
     padding: 1rem 2rem;
+    transition: var(--transition);
+}
+
+.btn a:hover {
+    filter: brightness(80%);
+    font-weight: 900;
 }
 
 .separar {
@@ -680,7 +701,7 @@ h1 {
     }
 
     nav.menu-open .menu-container {
-        background-color: var(--blue);
+        background-color: inherit;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -761,7 +782,7 @@ h1 {
 
     /* HEADER */
     h1 {
-        font-size: 4rem;
+        font-size: 3.3rem;
     }
 
     .header-title .size {
@@ -769,7 +790,7 @@ h1 {
     }
 
     .header-title .h2-lugares {
-        margin-left: 140px;
+        margin-left: 90px;
     }
 
     .header-title .h2-clima {
@@ -781,7 +802,7 @@ h1 {
     }
 
     .header-title .h2-location {
-        margin-left: 330px;
+        margin-left: 140px;
     }
 
     .galeria h3 {
@@ -862,10 +883,6 @@ h1 {
         margin-top: 1.5rem;
     }  
 
-    #clima {
-        padding: 1rem 0;
-    }
-
     .text-info p {
         padding: 1rem 1.5rem;
     }
@@ -878,7 +895,7 @@ h1 {
 /* MEDIA QUERIA 550PX */
 @media screen and (max-width: 550px) {
     h1 {
-        font-size: 4rem;
+        font-size: 3.3rem;
     }
 
     .header-title .size {
@@ -886,6 +903,18 @@ h1 {
     }
 
     .header-title .h2-location {
-        margin-left: 47px;
+        margin-left: 170px;
+    }
+
+    .header-title .h2-alc {
+        margin-left: 25px;
+    }
+
+    .header-title .h2-clima {
+        margin-left: 0;
+    }
+
+    .header-title .h2-lugares {
+        margin-left: 90px;
     }
 }

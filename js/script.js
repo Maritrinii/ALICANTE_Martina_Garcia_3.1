@@ -1,14 +1,8 @@
 // MENÚ
-const burger = document.querySelector(".burger i");
-if (burger) {
-    const nav = document.querySelector("nav");
-
-    burger.addEventListener("click", () => {
-    burger.classList.toggle("fa-bars");
-    burger.classList.toggle("fa-xmark");
-    nav.classList.toggle("menu-open");
-    });
-}
+$(".burger i").on("click", function() {
+    $(this).toggleClass("fa-bars fa-xmark");
+    $("nav").toggleClass("menu-open");
+});
 
 // --- GRÁFICO ---
 let grafico;
@@ -116,13 +110,10 @@ async function cargarDatos() {
 }
 
 // --- BOTÓN ACTUALIZAR ---
-const btn = document.querySelector("#clima .btn a");
-if (btn) {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        cargarDatos();
-    });
-}
+$("#clima .btn a").on("click", function(e) {
+    e.preventDefault();
+    cargarDatos();
+});
 
 
 // --- CARGAR AL INICIO ---
@@ -173,108 +164,83 @@ let currentLang = "es"; // idioma inicial
 function changeLanguage(lang) {
 
     // --- Menú ---
-    const menuLocalizacion = document.getElementById("menu-localizacion");
-    if (menuLocalizacion) menuLocalizacion.textContent = translations[lang].menu_localizacion;
-  
-    const menuClima = document.getElementById("menu-clima");
-    if (menuClima) menuClima.textContent = translations[lang].menu_clima;
-  
-    const menuLugares = document.getElementById("menu-lugares");
-    if (menuLugares) menuLugares.textContent = translations[lang].menu_lugares;
-  
+    $("#menu-localizacion").html(translations[lang].menu_localizacion);
 
+    $("#menu-clima").html(translations[lang].menu_clima);
+
+    $("#menu-lugares").html(translations[lang].menu_lugares);
 
 
 
     // --- Títulos ---
         //clima
-    const tituloClima = document.getElementById("titulo-clima");
-    if (tituloClima) tituloClima.textContent = translations[lang].titulo_clima;
-  
-    const subtitleClima = document.getElementById("subtitle-clima");
-    if (subtitleClima) subtitleClima.textContent = translations[lang].subtitle_clima;
+     $("#titulo-clima").html(translations[lang].titulo_clima);
+     $("#subtitle-clima").html(translations[lang].subtitle_clima);
+
+
 
         //localización
-    const tituloLocalizacion = document.getElementById("titulo-localizacion");
-    if (tituloLocalizacion) tituloLocalizacion.textContent = translations[lang].titulo_localizacion;
-  
-    const subtitleLocalizacion = document.getElementById("subtitle-localizacion");
-    if (subtitleLocalizacion) subtitleLocalizacion.textContent = translations[lang].subtitle_localizacion;
-  
+     $("#titulo-localizacion").html(translations[lang].titulo_localizacion);
+     $("#subtitle-localizacion").html(translations[lang].subtitle_localizacion);
+
+
+
         //lugares
-    const tituloLugares = document.getElementById("titulo-lugares");
-    if (tituloLugares) tituloLugares.textContent = translations[lang].titulo_lugares;
-  
-    const subtitleLugares = document.getElementById("subtitle-lugares");
-    if (subtitleLugares) subtitleLugares.textContent = translations[lang].subtitle_lugares;
- 
-    
+     $("#titulo-lugares").html(translations[lang].titulo_lugares);
+     $("#subtitle-lugares").html(translations[lang].subtitle_lugares);
+   
 
 
 
     // --- Párrafos ---
         //clima
-    const climaP1 = document.getElementById("clima-p1");
-    if (climaP1) climaP1.innerHTML = translations[lang].clima_p1;
-  
-    const climaP2 = document.getElementById("clima-p2");
-    if (climaP2) climaP2.innerHTML = translations[lang].clima_p2;
-  
-    const climaP3 = document.getElementById("clima-p3");
-    if (climaP3) climaP3.innerHTML = translations[lang].clima_p3;
+     $("#clima-p1").html(translations[lang].clima_p1);
 
-    const climaBtn = document.getElementById("clima-btn");
-    if (climaBtn) climaBtn.textContent = translations[lang].clima_btn_actualizar;
+     $("#clima-p2").html(translations[lang].clima_p2);
+
+     $("#clima-p3").html(translations[lang].clima_p3);
+
+     $("#clima-btn").html(translations[lang].clima_btn_actualizar);
 
 
 
         //localización
-    const localizacionP1 = document.getElementById("localizacion-p1");
-    if (localizacionP1) localizacionP1.innerHTML = translations[lang].localizacion_p1;
-  
-    const localizacionP2 = document.getElementById("localizacion-p2");
-    if (localizacionP2) localizacionP2.innerHTML = translations[lang].localizacion_p2;
-  
-    const localizacionP3 = document.getElementById("localizacion-p3");
-    if (localizacionP3) localizacionP3.innerHTML = translations[lang].localizacion_p3;
+
+     $("#localizacion-p1").html(translations[lang].localizacion_p1);
+
+     $("#localizacion-p2").html(translations[lang].localizacion_p2);
+
+     $("#localizacion-p3").html(translations[lang].localizacion_p3);
+   
+
 
         //lugares
-    const h3Lugares1 = document.getElementById("h3-lugares1");
-    if (h3Lugares1) h3Lugares1.innerHTML = translations[lang].h3_lugares1;
 
-    const h3Lugares2 = document.getElementById("h3-lugares2");
-    if (h3Lugares2) h3Lugares2.innerHTML = translations[lang].h3_lugares2;
+     $("#h3-lugares1").html(translations[lang].h3_lugares1);
 
-    const h3Lugares3 = document.getElementById("h3-lugares3");
-    if (h3Lugares3) h3Lugares3.innerHTML = translations[lang].h3_lugares3;
+     $("#h3-lugares2").html(translations[lang].h3_lugares2);
 
-    const h3Lugares4 = document.getElementById("h3-lugares4");
-    if (h3Lugares4) h3Lugares4.innerHTML = translations[lang].h3_lugares4;
+     $("#h3-lugares3").html(translations[lang].h3_lugares3);
 
-    const h3Lugares5 = document.getElementById("h3-lugares5");
-    if (h3Lugares5) h3Lugares5.innerHTML = translations[lang].h3_lugares5;
-    
+     $("#h3-lugares4").html(translations[lang].h3_lugares4);
 
-    
-    const lugaresP1 = document.getElementById("lugares-p1");
-    if (lugaresP1) lugaresP1.innerHTML = translations[lang].lugares_p1;
-  
-    const lugaresP2 = document.getElementById("lugares-p2");
-    if (lugaresP2) lugaresP2.innerHTML = translations[lang].lugares_p2;
- 
+     $("#h3-lugares5").html(translations[lang].h3_lugares5);
+
+     $("#lugares-p1").html(translations[lang].lugares_p1);
+
+     $("#lugares-p2").html(translations[lang].lugares_p2);
     
 
 
 
     // --- Footer ---
-    const footerPolitica = document.getElementById("footer-politica");
-    if (footerPolitica) footerPolitica.innerHTML = translations[lang].footer_politica;
-  
-    const footerAviso = document.getElementById("footer-aviso");
-    if (footerAviso) footerAviso.innerHTML = translations[lang].footer_aviso;
-  
-    const footerCookies = document.getElementById("footer-cookies");
-    if (footerCookies) footerCookies.innerHTML = translations[lang].footer_cookies;
+     $("#footer-politica").html(translations[lang].footer_politica);
+
+     $("#footer-aviso").html(translations[lang].footer_aviso);
+
+     $("#footer-cookies").html(translations[lang].footer_cookies);
+
+
 
     // --- Actualizar gráfico y temperatura actual ---
     cargarDatos(); // esto recarga la temperatura y vuelve a dibujar el gráfico con los textos correctos del idioma
@@ -418,5 +384,64 @@ const translations = {
     },
 
   };
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function activarHoverCursor() {
+
+    // BORRAR TOOLTIP SI EXISTE
+    const removeTooltip = () => {
+      const tip = document.querySelector(".tooltip-hover");
+      if (tip) tip.remove();
+    };
+  
+    document.querySelectorAll("em[data-msg]").forEach(em => {
+  
+      em.addEventListener("mouseenter", e => {
+        removeTooltip();
+  
+        const texto = em.dataset.msg;
+  
+        const tooltip = document.createElement("div");
+        tooltip.className = "tooltip-hover";
+        tooltip.textContent = texto;
+  
+        document.body.appendChild(tooltip);
+  
+        const rect = em.getBoundingClientRect();
+        tooltip.style.left = rect.left + rect.width / 2 + "px";
+        tooltip.style.top = rect.top + window.scrollY + "px";
+      });
+  
+      em.addEventListener("mouseleave", removeTooltip);
+    });
+  }
+
+  // Actualizar los dataset.msg según idioma
+document.querySelector('em[data-msg-original="HACE CALOR"]').dataset.msg =
+translations[lang].tooltips.calor;
+
+document.querySelector('em[data-msg-original="ACHICHARRADO"]').dataset.msg =
+translations[lang].tooltips.achicharrado;
+
+document.querySelector('em[data-msg-original="HACE FRESCO ALICANTINO"]').dataset.msg =
+translations[lang].tooltips.frescoreta;
+
+// REACTIVAR HOVER después de cambiar texto
+activarHoverCursor();
 
   
