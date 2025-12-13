@@ -247,13 +247,15 @@ h1 {
 .h2-lugares {
     margin-left: 360px;
 }
+.h2-lugares-en {
+    margin-left: 250px;
+}
 
 .h2-clima {
     margin-left: 160px;
 }
-
-.h2-clima.en {
-    margin-left: 2000px;
+.h2-clima-en {
+    margin-left: 450px;
 }
 
 .h2-alc {
@@ -262,6 +264,9 @@ h1 {
 
 .h2-location {
     margin-left: 670px;
+}
+.h2-location-en {
+    margin-left: 330px;
 }
 
 /* FOOTER */
@@ -585,6 +590,9 @@ h1 {
     .header-title .h2-location {
         margin-left: 470px;
     }
+    .header-title .h2-location-en {
+        margin-left: 220px;
+    }
 
     .header-title .h2-alc {
         margin-left: 110px;
@@ -593,9 +601,15 @@ h1 {
     .header-title .h2-lugares {
         margin-left: 250px;
     }
+    .header-title .h2-lugares-en {
+        margin-left: 170px;
+    }
 
     .header-title .h2-clima {
         margin-left: 100px;
+    }
+    .header-title .h2-clima-en {
+        margin-left: 300px;
     }
 }
 
@@ -623,6 +637,10 @@ h1 {
         margin-left: 250px;
     }
 
+    .header-title .h2-lugares-en {
+        margin-left: 180px;
+    }
+
 }
 
 /* MEDIA QUERIA 800PX */
@@ -638,9 +656,19 @@ h1 {
     .header-title .h2-location {
         margin-left: 400px;
     }
+    .header-title .h2-location-en {
+        margin-left: 200px;
+    }
+
+    .header-title .h2-clima-en {
+        margin-left: 270px;
+    }
 
     .header-title .h2-lugares {
         margin-left: 220px;
+    }
+    .header-title .h2-lugares-en {
+        margin-left: 160px;
     }
 }
 
@@ -794,15 +822,25 @@ h1 {
     }
 
     .header-title .h2-clima {
-        margin-left: 40px;
+        margin-left: 0px;
+    }
+    .header-title .h2-clima-en {
+        margin-left: 110px;
     }
 
     .header-title .h2-alc {
-        margin-left: 100px;
+        margin-left: -40px;
     }
 
     .header-title .h2-location {
-        margin-left: 140px;
+        margin-left: 170px;
+    }
+    .header-title .h2-location-en {
+        margin-left: 50px;
+    }
+
+    .header-title .h2-lugares-en {
+        margin-left: 50px;
     }
 
     .galeria h3 {
@@ -905,16 +943,25 @@ h1 {
     .header-title .h2-location {
         margin-left: 170px;
     }
+    .header-title .h2-location-en {
+        margin-left: 40px;
+    }
 
     .header-title .h2-alc {
-        margin-left: 25px;
+        margin-left: -40px;
     }
 
     .header-title .h2-clima {
         margin-left: 0;
     }
+    .header-title .h2-clima-en {
+        margin-left: 110px;
+    }
 
     .header-title .h2-lugares {
         margin-left: 90px;
+    }
+    .header-title .h2-lugares-en {
+        margin-left: 50px;
     }
 }

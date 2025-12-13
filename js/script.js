@@ -4,7 +4,7 @@ $(".burger i").on("click", function() {
     $("nav").toggleClass("menu-open");
 });
 
-// --- GRÁFICO ---
+// GRÁFICO
 let grafico;
 
 async function cargarDatos() {
@@ -109,57 +109,18 @@ async function cargarDatos() {
     }
 }
 
-// --- BOTÓN ACTUALIZAR ---
+// BOTÓN ACTUALIZAR 
 $("#clima .btn a").on("click", function(e) {
     e.preventDefault();
     cargarDatos();
 });
 
 
-// --- CARGAR AL INICIO ---
+// CARGAR AL INICIO 
 cargarDatos();
 
-
-// CURSOR -> PALABRAS
-const cursorText = document.createElement('div');
-cursorText.classList.add('custom-cursor');
-document.body.appendChild(cursorText);
-
-document.querySelectorAll('.text-info em').forEach(em => {
-    em.addEventListener('mouseenter', (e) => {
-        cursorText.textContent = em.getAttribute('data-msg');
-        cursorText.style.display = 'block';
-    });
-
-    em.addEventListener('mouseleave', () => {
-        cursorText.style.display = 'none';
-    });
-
-    em.addEventListener('mousemove', (e) => {
-        cursorText.style.left = e.clientX + 'px';
-        cursorText.style.top = e.clientY + 'px';
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // CAMBIO DE IDIOMA
-let currentLang = "es"; // idioma inicial
+let currentLang = "es";
 
 function changeLanguage(lang) {
 
@@ -179,9 +140,11 @@ function changeLanguage(lang) {
 
 
 
+
         //localización
      $("#titulo-localizacion").html(translations[lang].titulo_localizacion);
      $("#subtitle-localizacion").html(translations[lang].subtitle_localizacion);
+
 
 
 
@@ -205,7 +168,6 @@ function changeLanguage(lang) {
 
 
         //localización
-
      $("#localizacion-p1").html(translations[lang].localizacion_p1);
 
      $("#localizacion-p2").html(translations[lang].localizacion_p2);
@@ -215,7 +177,6 @@ function changeLanguage(lang) {
 
 
         //lugares
-
      $("#h3-lugares1").html(translations[lang].h3_lugares1);
 
      $("#h3-lugares2").html(translations[lang].h3_lugares2);
@@ -241,12 +202,25 @@ function changeLanguage(lang) {
      $("#footer-cookies").html(translations[lang].footer_cookies);
 
 
+  document.querySelectorAll('[data-subtitle]').forEach(subtitle => {
+  subtitle.classList.forEach(cls => {
+      if(cls.endsWith('-en')) subtitle.classList.remove(cls);
+  });
 
-    // --- Actualizar gráfico y temperatura actual ---
-    cargarDatos(); // esto recarga la temperatura y vuelve a dibujar el gráfico con los textos correctos del idioma
+  if(currentLang === 'en') {
+      const baseClass = Array.from(subtitle.classList).find(c => c.startsWith('h2-') && !c.endsWith('-en'));
+      if(baseClass) subtitle.classList.add(`${baseClass}-en`);
+  }
+});
+
+
+
+
+    cargarDatos();
   }
   
 const langBtn = document.getElementById("lang-toggle");
+const subtitle = document.getElementById("subtitle-clima");
 
 langBtn.addEventListener("click", () => {
   currentLang = currentLang === "es" ? "en" : "es"; 
@@ -383,65 +357,4 @@ const translations = {
         footer_cookies:`COOKIE SETTINGS`,
     },
 
-  };
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  function activarHoverCursor() {
-
-    // BORRAR TOOLTIP SI EXISTE
-    const removeTooltip = () => {
-      const tip = document.querySelector(".tooltip-hover");
-      if (tip) tip.remove();
-    };
-  
-    document.querySelectorAll("em[data-msg]").forEach(em => {
-  
-      em.addEventListener("mouseenter", e => {
-        removeTooltip();
-  
-        const texto = em.dataset.msg;
-  
-        const tooltip = document.createElement("div");
-        tooltip.className = "tooltip-hover";
-        tooltip.textContent = texto;
-  
-        document.body.appendChild(tooltip);
-  
-        const rect = em.getBoundingClientRect();
-        tooltip.style.left = rect.left + rect.width / 2 + "px";
-        tooltip.style.top = rect.top + window.scrollY + "px";
-      });
-  
-      em.addEventListener("mouseleave", removeTooltip);
-    });
-  }
-
-  // Actualizar los dataset.msg según idioma
-document.querySelector('em[data-msg-original="HACE CALOR"]').dataset.msg =
-translations[lang].tooltips.calor;
-
-document.querySelector('em[data-msg-original="ACHICHARRADO"]').dataset.msg =
-translations[lang].tooltips.achicharrado;
-
-document.querySelector('em[data-msg-original="HACE FRESCO ALICANTINO"]').dataset.msg =
-translations[lang].tooltips.frescoreta;
-
-// REACTIVAR HOVER después de cambiar texto
-activarHoverCursor();
-
-  
+  };  
